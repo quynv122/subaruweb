@@ -50,7 +50,7 @@ const Header: React.FC = () => {
 
         {/* Menu content */}
         <nav className="flex flex-col space-y-4 p-4 text-base font-medium text-blue-900">
-          <button onClick={() => navigate("/Home")} className=" font-bold hover:underline">
+          <button onClick={() => navigate("/")} className=" font-bold hover:underline">
             TRANG CHỦ
           </button>
 
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
 
         {/* Menu */}
         <nav className="flex space-x-6 text-lg font-medium text-blue-900">
-          <button onClick={() => navigate("/Home")} className="hover:underline">
+          <button onClick={() => navigate("/")} className="hover:underline">
             TRANG CHỦ
           </button>
           <button onClick={() => navigate("/Home")} className="hover:underline">
