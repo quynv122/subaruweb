@@ -7,6 +7,8 @@ import Contact from './pages/Contact';
 import QuotePopup from './components/QuotePopup';
 import About from './components/About';
 import FloatingButtons from './components/FloatingButtons';
+import CarLists from './pages/CarLists';
+
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home onOpenPopup={openPopup} />} />
         <Route path="/Contact" element={<Contact  />} />
+        <Route path="/CarLists" element={<CarLists onOpenPopup={openPopup}  />} />
       </Routes>
       <About />
       <Footer />

@@ -69,11 +69,13 @@ const Header = ({ onOpenPopup }: HomeProps) => {
           {/* Sub menu toggle */}
           <div>
             <button
-              onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+              
               className="flex items-center justify-between w-full text-left font-bold"
             >
-              <span>CÁC MẪU XE SUBARU</span>
-              <span className="text-xs">{isSubMenuOpen ? "▲" : "▼"}</span>
+              <span onClick={() => navigate("/CarLists")}
+              >CÁC MẪU XE SUBARU</span>
+              <span onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+               className="text-xs">{isSubMenuOpen ? "▲" : "▼"}</span>
             </button>
 
             {/* Sub items */}
@@ -152,7 +154,7 @@ const Header = ({ onOpenPopup }: HomeProps) => {
           <button onClick={() => navigate("/")} className="hover:underline">
             TRANG CHỦ
           </button>
-          <button onClick={() => navigate("/Home")} className="hover:underline">
+          <button onClick={() => navigate("/CarLists")} className="hover:underline">
             CÁC MẪU XE SUBARU
           </button>
           <button onClick={() => navigate("/Home")} className="hover:underline">

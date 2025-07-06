@@ -23,7 +23,7 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
             <span className="text-base font-normal ml-2">2025</span>
           </h1>
 
-          <div className="mt-6 flex flex-wrap gap-12">
+          <div className="mt-6 flex flex-wrap gap-4 md:gap-12 ">
             <button
               onClick={onOpenPopup}
               className="flex items-center gap-2 bg-yellow-300 text-black px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition"
