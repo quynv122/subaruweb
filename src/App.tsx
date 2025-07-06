@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import QuotePopup from './components/QuotePopup';
 import About from './components/About';
-
+import FloatingButtons from './components/FloatingButtons';
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -26,6 +26,7 @@ function App() {
 
       {/* Popup luôn tồn tại ở App để dùng toàn cục */}
       <QuotePopup isOpen={isPopupOpen} onClose={closePopup} />
+      <FloatingButtons/>
     </BrowserRouter>
   );
 }
