@@ -24,11 +24,11 @@ const Contact = () => {
             Showroom 4S: Số 1 Mạc Thái Tông, Trung Hòa, Cầu Giấy, Hà Nội
           </p>
           <a
-            href="tel:0985981331"
+            href="tel:0849996883"
             className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-md text-sm md:text-lg font-semibold transition"
           >
             <Phone className="w-4 h-4 md:w-6 md:h-6 mr-2" />
-            0985981331
+            084 999 6883
           </a>
         </div>
       </div>
@@ -47,10 +47,10 @@ const Contact = () => {
         </p>
         <div className="mt-4">
           <a
-            href="tel:0985981331"
+            href="tel:0849996883"
             className="inline-block border border-white px-6 py-2 rounded-full text-sm hover:bg-white hover:text-blue-600 transition"
           >
-            HOTLINE: 0985981331
+            HOTLINE: 084 999 6883
           </a>
         </div>
       </div>

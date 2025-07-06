@@ -1,7 +1,13 @@
-import { Mail, Facebook, Youtube, Music } from 'lucide-react'
-import carBg from '../assets/images/heroImage.jpg' // Đường dẫn đến ảnh xe của bạn
+import { Mail, Facebook, Youtube, Music } from "lucide-react";
+import { FaFacebookF, FaYoutube } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si";
+import carBg from "../assets/images/heroImage.jpg"; // Đường dẫn đến ảnh xe của bạn
 
-const HeroSection = () => {
+type HomeProps = {
+  onOpenPopup: () => void;
+};
+
+const HeroSection = ({ onOpenPopup }: HomeProps) => {
   return (
     <section className="relative w-full">
       {/* Hình nền */}
@@ -13,16 +19,20 @@ const HeroSection = () => {
         <div className="relative z-10 text-white text-left px-6 md:px-16 max-w-5xl">
           <h2 className="text-xl md:text-3xl font-light">The New</h2>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide uppercase">
-          SUBARU WRX tS <span className="text-base font-normal ml-2">2025</span>
+            SUBARU WRX tS{" "}
+            <span className="text-base font-normal ml-2">2025</span>
           </h1>
 
-          <div className="mt-6 flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 bg-yellow-300 text-black px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
-              <Mail size={16} />
+          <div className="mt-6 flex flex-wrap gap-12">
+            <button
+              onClick={onOpenPopup}
+              className="flex items-center gap-2 bg-yellow-300 text-black px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition"
+            >
+              <Mail size={24} />
               Đăng ký lái thử
             </button>
             <button className="flex items-center gap-2 bg-yellow-300 text-black px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
-              <Mail size={16} />
+              <Mail size={24} />
               Xem đánh giá xe
             </button>
           </div>
@@ -34,8 +44,12 @@ const HeroSection = () => {
         {/* Bên trái: mô tả */}
         <div className="md:col-span-1">
           <h3 className="text-lg font-bold mb-2">Subaru Hà Nội</h3>
-          <p className="text-sm mb-1">Cập nhật thông tin bảng giá. Chương trình ưu đãi.</p>
-          <p className="text-sm">Bài đánh giá. Cảm nhận khách hàng về xe ô tô Subaru.</p>
+          <p className="text-sm mb-1">
+            Cập nhật thông tin bảng giá. Chương trình ưu đãi.
+          </p>
+          <p className="text-sm">
+            Bài đánh giá. Cảm nhận khách hàng về xe ô tô Subaru.
+          </p>
         </div>
 
         {/* Bên phải: danh sách + mạng xã hội */}
@@ -45,10 +59,50 @@ const HeroSection = () => {
             <li>Quà tặng giá trị từ hãng.</li>
             <li>Cập nhật bảng giá xe ô tô Subaru.</li>
           </ul>
+          {/* Mạng xã hội */}
           <div className="flex gap-4 mt-4">
-            <Facebook className="w-5 h-5" />
-            <Music className="w-5 h-5" />
-            <Youtube className="w-5 h-5" />
+            {/* Facebook */}
+            <div className="relative group">
+              <a
+                href="https://facebook.com/vinhautohanoi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-blue-600 text-white hover:scale-105 transition"
+              >
+                <FaFacebookF className="text-sm" />
+              </a>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
+                Follow on Facebook
+              </span>
+            </div>
+
+            {/* TikTok */}
+            <div className="relative group">
+              <a
+                href="https://www.tiktok.com/@thevinhx1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-white text-white hover:bg-white hover:text-black transition"
+              >
+                <SiTiktok className="text-sm" />
+              </a>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
+                Follow on TikTok
+              </span>
+            </div>
+
+            {/* YouTube */}
+            <div className="relative group">
+              <a
+                href=""
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-white text-white hover:bg-white hover:text-black transition"
+              >
+                <FaYoutube className="text-sm" />
+              </a>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
+                Subscribe on YouTube
+              </span>
+            </div>
           </div>
         </div>
 
@@ -65,7 +119,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

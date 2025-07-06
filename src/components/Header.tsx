@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 
-const Header: React.FC = () => {
+type HomeProps = {
+  onOpenPopup: () => void;
+};
+
+const Header = ({ onOpenPopup }: HomeProps) => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
@@ -20,12 +24,17 @@ const Header: React.FC = () => {
         </button>
 
         {/* Logo */}
-        <div className="flex flex-col items-center">
+        <button
+          type="button"
+          aria-label="Quay về trang chủ"
+          onClick={() => navigate("/")}
+          className="flex flex-col items-center"
+        >
           <img src={logo} alt="Subaru Logo" className="h-10 w-auto" />
           <span className="text-xs font-bold text-gray-700 -translate-y-1">
             SUBARU
           </span>
-        </div>
+        </button>
 
         {/* Placeholder phải */}
         <div className="w-6" />
@@ -50,7 +59,10 @@ const Header: React.FC = () => {
 
         {/* Menu content */}
         <nav className="flex flex-col space-y-4 p-4 text-base font-medium text-blue-900">
-          <button onClick={() => navigate("/")} className=" font-bold hover:underline">
+          <button
+            onClick={() => navigate("/")}
+            className=" font-bold hover:underline"
+          >
             TRANG CHỦ
           </button>
 
@@ -93,16 +105,28 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          <button onClick={() => navigate("/Home")} className=" font-bold hover:underline">
+          <button
+            onClick={() => navigate("/Home")}
+            className=" font-bold hover:underline"
+          >
             TIN TỨC & SỰ KIỆN
           </button>
-          <button onClick={() => navigate("/Home")} className=" font-bold hover:underline">
+          <button
+            onClick={() => navigate("/Home")}
+            className=" font-bold hover:underline"
+          >
             TRẢI NGHIỆM KHÁCH HÀNG
           </button>
-          <button onClick={() => navigate("/Contact")} className=" font-bold hover:underline">
+          <button
+            onClick={() => navigate("/Contact")}
+            className=" font-bold hover:underline"
+          >
             LIÊN HỆ
           </button>
-          <button className="bg-blue-800 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-700">
+          <button
+            onClick={onOpenPopup}
+            className="bg-blue-800 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-700"
+          >
             NHẬN BÁO GIÁ
           </button>
         </nav>
@@ -111,12 +135,17 @@ const Header: React.FC = () => {
       {/* Desktop Header */}
       <div className="hidden md:flex items-center justify-between px-32 py-2 ">
         {/* Logo */}
-        <div className="flex flex-col items-center">
+        <button
+          type="button"
+          aria-label="Quay về trang chủ"
+          onClick={() => navigate("/")}
+          className="flex flex-col items-center"
+        >
           <img src={logo} alt="Subaru Logo" className="h-16 w-auto" />
           <span className="transform -translate-y-3 font-bold text-sm text-gray-700">
             SUBARU
           </span>
-        </div>
+        </button>
 
         {/* Menu */}
         <nav className="flex space-x-6 text-lg font-medium text-blue-900">
@@ -132,13 +161,19 @@ const Header: React.FC = () => {
           <button onClick={() => navigate("/Home")} className="hover:underline">
             TRẢI NGHIỆM KHÁCH HÀNG
           </button>
-          <button onClick={() => navigate("/Contact")} className="hover:underline">
+          <button
+            onClick={() => navigate("/Contact")}
+            className="hover:underline"
+          >
             LIÊN HỆ
           </button>
         </nav>
 
         {/* Nút báo giá */}
-        <button className="bg-blue-800 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition">
+        <button
+          onClick={onOpenPopup}
+          className="bg-blue-800 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition"
+        >
           NHẬN BÁO GIÁ
         </button>
       </div>
