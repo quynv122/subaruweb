@@ -1,49 +1,68 @@
-import { Mail, Facebook, Youtube, Music } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Mail, Menu } from "lucide-react";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
-import carBg from "../assets/images/heroImage.jpg"; // Đường dẫn đến ảnh xe của bạn
+
+type HeroData = {
+  "Tên xe": string;
+  "Năm": string;
+  "Link ảnh": string;
+};
 
 type HomeProps = {
   onOpenPopup: () => void;
 };
 
 const HeroSection = ({ onOpenPopup }: HomeProps) => {
+  const [hero, setHero] = useState<HeroData | null>(null);
+
+  useEffect(() => {
+    fetch(
+      "https://opensheet.elk.sh/1O3LYWUq4K0jwUyKUR8og6FHIZSyf2wnyBleGz6EC5VY/Newcar"
+    )
+      .then((res) => res.json())
+      .then((data) => setHero(data[0]))
+      .catch((err) => console.error("Lỗi load Hero:", err));
+  }, []);
+
+  if (!hero) return null;
+
   return (
     <section className="relative w-full">
       {/* Hình nền */}
       <div
         className="h-[600px] bg-cover bg-center flex items-center justify-center relative"
-        style={{ backgroundImage: `url(${carBg})` }}
+        style={{ backgroundImage: `url(${hero["Link ảnh"]})` }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-white text-left px-6 md:px-16 max-w-5xl">
           <h2 className="text-xl md:text-3xl font-light">The New</h2>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide uppercase">
-            SUBARU WRX tS{" "}
-            <span className="text-base font-normal ml-2">2025</span>
+            {hero["Tên xe"]}{" "}
+            <span className="text-base font-normal ml-2">{hero["Năm"]}</span>
           </h1>
 
-          <div className="mt-6 flex flex-wrap gap-4 md:gap-12 ">
+          <div className="mt-6 flex flex-wrap gap-4 md:gap-12">
             <button
               onClick={onOpenPopup}
-              className="flex items-center gap-2 bg-yellow-300 text-black px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition"
+              className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition"
             >
               <Mail size={24} />
               Đăng ký lái thử
             </button>
-            <button className="flex items-center gap-2 bg-yellow-300 text-black px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
-              <Mail size={24} />
+            <button className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
+              <Menu size={24} />
               Xem đánh giá xe
             </button>
           </div>
         </div>
       </div>
 
-      {/* Nội dung mô tả bên dưới */}
-      <div className="bg-black text-white py-10 px-6 md:px-16 grid md:grid-cols-3 gap-8">
-        {/* Bên trái: mô tả */}
+      {/* Nội dung mô tả */}
+      <div className="bg-black text-white py-8 px-6 md:px-32 grid md:grid-cols-3 gap-8">
+        {/* Mô tả bên trái */}
         <div className="md:col-span-1">
-          <h3 className="text-lg font-bold mb-2">Subaru Hà Nội</h3>
+          <h3 className="text-xl font-bold mb-2">Subaru Hà Nội</h3>
           <p className="text-sm mb-1">
             Cập nhật thông tin bảng giá. Chương trình ưu đãi.
           </p>
@@ -52,61 +71,37 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
           </p>
         </div>
 
-        {/* Bên phải: danh sách + mạng xã hội */}
+        {/* Danh sách và mạng xã hội */}
         <div className="md:col-span-1 space-y-2">
           <ul className="text-sm list-disc list-inside space-y-1">
             <li>Chương trình ưu đãi.</li>
             <li>Quà tặng giá trị từ hãng.</li>
             <li>Cập nhật bảng giá xe ô tô Subaru.</li>
           </ul>
-          {/* Mạng xã hội */}
-          <div className="flex gap-4 mt-4">
-            {/* Facebook */}
-            <div className="relative group">
-              <a
-                href="https://facebook.com/vinhautohanoi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-full bg-blue-600 text-white hover:scale-105 transition"
-              >
-                <FaFacebookF className="text-sm" />
-              </a>
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
-                Follow on Facebook
-              </span>
-            </div>
 
-            {/* TikTok */}
-            <div className="relative group">
-              <a
-                href="https://www.tiktok.com/@thevinhx1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-full border border-white text-white hover:bg-white hover:text-black transition"
-              >
-                <SiTiktok className="text-sm" />
-              </a>
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
-                Follow on TikTok
-              </span>
-            </div>
-
-            {/* YouTube */}
-            <div className="relative group">
-              <a
-                href=""
-                className="flex items-center justify-center w-9 h-9 rounded-full border border-white text-white hover:bg-white hover:text-black transition"
-              >
-                <FaYoutube className="text-sm" />
-              </a>
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
-                Subscribe on YouTube
-              </span>
-            </div>
+          <div className="flex gap-8 pt-4">
+            <SocialIcon
+              href="https://facebook.com/vinhautohanoi"
+              icon={<FaFacebookF className="text-sm" />}
+              tooltip="Follow on Facebook"
+              bgClass="bg-blue-600"
+            />
+            <SocialIcon
+              href="https://www.tiktok.com/@thevinhx1"
+              icon={<SiTiktok className="text-sm" />}
+              tooltip="Follow on TikTok"
+              border
+            />
+            <SocialIcon
+              href="https://www.youtube.com/@vinhx1"
+              icon={<FaYoutube className="text-sm" />}
+              tooltip="Subscribe on YouTube"
+              border
+            />
           </div>
         </div>
 
-        {/* Input đăng ký */}
+        {/* Đăng ký */}
         <div className="md:col-span-1 flex flex-col gap-4">
           <input
             type="text"
@@ -121,5 +116,35 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
     </section>
   );
 };
+
+const SocialIcon = ({
+  href,
+  icon,
+  tooltip,
+  border = false,
+  bgClass = "",
+}: {
+  href: string;
+  icon: React.ReactNode;
+  tooltip: string;
+  border?: boolean;
+  bgClass?: string;
+}) => (
+  <div className="relative group">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`flex items-center justify-center w-9 h-9 rounded-full ${
+        border ? "border border-white text-white" : `${bgClass} text-white`
+      } hover:scale-105 hover:bg-white hover:text-black transition`}
+    >
+      {icon}
+    </a>
+    <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
+      {tooltip}
+    </span>
+  </div>
+);
 
 export default HeroSection;

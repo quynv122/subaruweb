@@ -135,7 +135,7 @@ const Header = ({ onOpenPopup }: HomeProps) => {
       </div>
 
       {/* Desktop Header */}
-      <div className="hidden md:flex items-center justify-between px-32 py-2 ">
+      <div className="hidden md:flex h-16 items-center justify-between px-32 py-2 shadow-xl shadow-gray-600/30 ">
         {/* Logo */}
         <button
           type="button"
