@@ -51,7 +51,9 @@ const CarList = ({ onOpenPopup }: CarListProps) => {
                 <Mail size={18} className="mr-2" />
                 ĐĂNG KÝ LÁI THỬ
               </button>
-              <button className="flex items-center border border-blue-700 hover:bg-blue-700 hover:text-white text-blue-700 text-sm md:text-base font-bold px-3 py-1.5 rounded transition">
+              <button 
+                
+                className="flex items-center border border-blue-700 hover:bg-blue-700 hover:text-white text-blue-700 text-sm md:text-base font-bold px-3 py-1.5 rounded transition">
                 <Menu size={18} className="mr-2" />
                 XEM ĐÁNH GIÁ XE
               </button>
