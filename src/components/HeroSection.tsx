@@ -33,11 +33,11 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
     <section className="relative w-full">
       {/* Hình nền */}
       <div
-        className="h-[600px] bg-cover bg-center flex items-center justify-center relative"
+        className="h-[300px] md:h-[500px] bg-cover bg-center flex items-center justify-center relative"
         style={{ backgroundImage: `url(${hero["Link ảnh"]})` }}
       >
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-white text-left px-6 md:px-16 max-w-5xl">
+        <div className="relative z-10 text-white text-left px-6 md:px-16 max-w-5xl mt-14 md:mt-0">
           <h2 className="text-xl md:text-3xl font-light">The New</h2>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide uppercase">
             {hero["Tên xe"]}{" "}
@@ -47,14 +47,14 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
           <div className="mt-6 flex flex-wrap gap-4 md:gap-12">
             <button
               onClick={onOpenPopup}
-              className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition"
+              className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm md:text-base  font-medium hover:bg-blue-700 hover:text-white transition"
             >
               <Mail size={24} />
               Đăng ký lái thử
             </button>
             <button
               onClick={() => navigator("/NewCarReview")}
-             className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
+             className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm md:text-base  font-medium hover:bg-blue-700 hover:text-white transition">
               <Menu size={24} />
               Xem đánh giá xe
             </button>
