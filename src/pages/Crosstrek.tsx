@@ -74,7 +74,7 @@ const navigate = useNavigate();
             <span className="text-blue-700 font-semibold">999.000.000 VNĐ</span>
           </li>
           <li>
-            Subaru Crosstrek 2.0 i-S EyeSight e-Boxer Hybrid:{" "}
+            SUBARU Crosstrek 2.0i-S EyeSight Hybrid AWD CVT:{" "}
             <span className="text-blue-700 font-semibold">1.129.000.000 VNĐ</span>
           </li>
         </ul>
