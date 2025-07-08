@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Mail, Menu } from "lucide-react";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 type HeroData = {
   "Tên xe": string;
@@ -14,6 +15,7 @@ type HomeProps = {
 };
 
 const HeroSection = ({ onOpenPopup }: HomeProps) => {
+  const navigator = useNavigate();
   const [hero, setHero] = useState<HeroData | null>(null);
 
   useEffect(() => {
@@ -50,7 +52,9 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
               <Mail size={24} />
               Đăng ký lái thử
             </button>
-            <button className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
+            <button
+              onClick={() => navigator("/NewCarReview")}
+             className="flex items-center gap-2 bg-yellow-300 text-black px-2  md:px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-700 hover:text-white transition">
               <Menu size={24} />
               Xem đánh giá xe
             </button>
