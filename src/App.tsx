@@ -12,6 +12,8 @@ import { Toaster } from "react-hot-toast";
 import NewsEvents from "./pages/NewsEvents";
 import Forester from "./pages/Forester";
 import NewCarReview from "./pages/NewCarReview";
+import Crosstrek from "./pages/Crosstrek";
+import Outback from "./pages/Outback";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -48,9 +50,14 @@ function App() {
           element={<Forester onOpenPopup={openPopup} />}
         />
         <Route
-          path="/NewCarReview"
-          element={<NewCarReview />}
+          path="/Detail-Crosstrek"
+          element={<Crosstrek onOpenPopup={openPopup} />}
         />
+        <Route
+          path="/Detail-Outback"
+          element={<Outback onOpenPopup={openPopup} />}
+        />
+        <Route path="/NewCarReview" element={<NewCarReview />} />
       </Routes>
       <About onOpenPopup={openPopup} />
       <Footer />

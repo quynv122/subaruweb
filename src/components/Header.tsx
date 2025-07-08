@@ -94,10 +94,12 @@ const Header = ({ onOpenPopup }: HomeProps) => {
               >
                 Subaru Forester
               </a>
-              <a href="#" className="block px-2 py-1 hover:underline">
+              <a onClick={() => navigate("/Detail-Crosstrek")} 
+              className="block px-2 py-1 hover:underline">
                 Subaru Crosstrek
               </a>
-              <a href="#" className="block px-2 py-1 hover:underline">
+              <a onClick={() => navigate("/Detail-Outback")}
+               className="block px-2 py-1 hover:underline">
                 Subaru Outback
               </a>
               <a href="#" className="block px-2 py-1 hover:underline">
@@ -177,10 +179,14 @@ const Header = ({ onOpenPopup }: HomeProps) => {
     >
       Subaru Forester
     </a>
-    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+    <a
+    onClick={() => navigate("/Detail-Crosstrek")}
+     className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
       Subaru Crosstrek
     </a>
-    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+    <a 
+    onClick={() => navigate("/Detail-Outback")}
+    className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
       Subaru Outback
     </a>
     <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
