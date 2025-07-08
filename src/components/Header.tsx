@@ -68,14 +68,16 @@ const Header = ({ onOpenPopup }: HomeProps) => {
 
           {/* Sub menu toggle */}
           <div>
-            <button
-              
-              className="flex items-center justify-between w-full text-left font-bold"
-            >
-              <span onClick={() => navigate("/CarLists")}
-              >CÁC MẪU XE SUBARU</span>
-              <span onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
-               className="text-xs">{isSubMenuOpen ? "▲" : "▼"}</span>
+            <button className="flex items-center justify-between w-full text-left font-bold">
+              <span onClick={() => navigate("/CarLists")}>
+                CÁC MẪU XE SUBARU
+              </span>
+              <span
+                onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+                className="text-xs"
+              >
+                {isSubMenuOpen ? "▲" : "▼"}
+              </span>
             </button>
 
             {/* Sub items */}
@@ -86,7 +88,10 @@ const Header = ({ onOpenPopup }: HomeProps) => {
                   : "max-h-0 overflow-hidden opacity-0"
               }`}
             >
-              <a href="#" className="block px-2 py-1 hover:underline">
+              <a
+                onClick={() => navigate("/Detail-Forester")}
+                className="block px-2 py-1 hover:underline"
+              >
                 Subaru Forester
               </a>
               <a href="#" className="block px-2 py-1 hover:underline">
@@ -108,7 +113,7 @@ const Header = ({ onOpenPopup }: HomeProps) => {
           </div>
 
           <button
-            onClick={() => navigate("/Home")}
+            onClick={() => navigate("/News&Events")}
             className=" font-bold hover:underline"
           >
             TIN TỨC & SỰ KIỆN
@@ -154,10 +159,46 @@ const Header = ({ onOpenPopup }: HomeProps) => {
           <button onClick={() => navigate("/")} className="hover:underline">
             TRANG CHỦ
           </button>
-          <button onClick={() => navigate("/CarLists")} className="hover:underline">
-            CÁC MẪU XE SUBARU
-          </button>
-          <button onClick={() => navigate("/Home")} className="hover:underline">
+          <div
+  className="relative group hover:bg-gray-50"
+>
+  <button
+    className="flex items-center justify-between w-full text-left font-bold py-2 px-4"
+  >
+    <span onClick={() => navigate("/CarLists")}>CÁC MẪU XE SUBARU</span>
+  </button>
+
+  <div
+    className="absolute left-0 top-full mt-0 w-56 bg-white border border-gray-200 shadow-lg rounded invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50"
+  >
+    <a
+      onClick={() => navigate("/Detail-Forester")}
+      className="block px-4 py-2 hover:bg-blue-50 cursor-pointer"
+    >
+      Subaru Forester
+    </a>
+    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+      Subaru Crosstrek
+    </a>
+    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+      Subaru Outback
+    </a>
+    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+      Subaru BRZ
+    </a>
+    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+      Subaru WRX
+    </a>
+    <a className="block px-4 py-2 hover:bg-blue-50 cursor-pointer">
+      Subaru WRX Wagon
+    </a>
+  </div>
+</div>
+
+          <button
+            onClick={() => navigate("/News&Events")}
+            className="hover:underline"
+          >
             TIN TỨC & SỰ KIỆN
           </button>
           <button onClick={() => navigate("/Home")} className="hover:underline">

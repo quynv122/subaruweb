@@ -9,6 +9,8 @@ import About from "./components/About";
 import FloatingButtons from "./components/FloatingButtons";
 import CarLists from "./pages/CarLists";
 import { Toaster } from "react-hot-toast";
+import NewsEvents from "./pages/NewsEvents";
+import Forester from "./pages/Forester";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -36,8 +38,16 @@ function App() {
           path="/CarLists"
           element={<CarLists onOpenPopup={openPopup} />}
         />
+        <Route
+          path="/News&Events"
+          element={<NewsEvents onOpenPopup={openPopup} />}
+        />
+        <Route
+          path="/Detail-Forester"
+          element={<Forester onOpenPopup={openPopup} />}
+        />
       </Routes>
-      <About />
+      <About onOpenPopup={openPopup} />
       <Footer />
 
       {/* Popup luôn tồn tại ở App để dùng toàn cục */}

@@ -20,8 +20,8 @@ const Contact = () => {
           <h2 className="text-2xl md:text-4xl font-extrabold uppercase mb-2 md:mb-4 leading-snug">
             Showroom <br /> Subaru Hà Nội
           </h2>
-          <p className="text-sm md:text-lg mb-4 md:mb-6">
-            Showroom 4S: Số 1 Mạc Thái Tông, Trung Hòa, Cầu Giấy, Hà Nội
+          <p className="text-sm md:text-base mb-4 md:mb-6">
+            Địa chỉ: Số 1 Mạc Thái Tông, Trung Hòa, Cầu Giấy, Hà Nội
           </p>
           <a
             href="tel:0849996883"

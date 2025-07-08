@@ -1,4 +1,9 @@
-const About = () => {
+import { useNavigate } from "react-router-dom";
+type HomeProps = {
+  onOpenPopup: () => void;
+};
+const About = ( { onOpenPopup }: HomeProps) => {
+  const navigate = useNavigate();
   return (
     <section className="bg-gray-50 text-sm text-gray-800 py-10 px-6 md:px-20">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
@@ -18,17 +23,21 @@ const About = () => {
         <div>
           <h3 className="text-lg font-bold uppercase mb-2">Thông tin chung</h3>
           <ul className="space-y-1">
-            <li className="hover:underline cursor-pointer">» Tin Tức & Sự Kiện</li>
+            <li onClick={() => navigate("/NewsEvents")}
+            className="hover:underline cursor-pointer">» Tin Tức & Sự Kiện</li>
             <li className="hover:underline cursor-pointer">» Giới Thiệu</li>
-            <li className="hover:underline cursor-pointer">» Liên Hệ</li>
+            <li onClick={() => navigate("/Contact")}
+             className="hover:underline cursor-pointer">» Liên Hệ</li>
           </ul>
         </div>
 
         {/* Cột 3: Sản phẩm */}
         <div>
-          <h3 className="text-lg font-bold uppercase mb-2">Sản phẩm</h3>
+          <h3 onClick={() => navigate("/CarLists")}
+           className="text-lg font-bold uppercase mb-2">Sản phẩm</h3>
           <ul className="space-y-1">
-            <li className="hover:underline cursor-pointer">» Subaru Forester</li>
+            <li onClick={() => navigate("/Detail-Forester")} 
+            className="hover:underline cursor-pointer">» Subaru Forester</li>
             <li className="hover:underline cursor-pointer">» Subaru Outback</li>
             <li className="hover:underline cursor-pointer">» Subaru BRZ</li>
           </ul>
@@ -39,7 +48,8 @@ const About = () => {
           <ul className="mt-8 md:mt-6 space-y-1">
             <li className="hover:underline cursor-pointer">» Subaru WRX</li>
             <li className="hover:underline cursor-pointer">» Subaru WRX Wagon</li>
-            <li className="hover:underline cursor-pointer">» Nhận Báo Giá</li>
+            <li onClick={() => onOpenPopup()} 
+            className="hover:underline cursor-pointer">» Nhận Báo Giá</li>
           </ul>
         </div>
       </div>
