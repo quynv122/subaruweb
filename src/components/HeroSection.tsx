@@ -30,6 +30,7 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
   if (!hero) return null;
 
   return (
+    <div className="w-full h-full">
     <section className="relative w-full">
       {/* Hình nền */}
       <div
@@ -118,6 +119,7 @@ const HeroSection = ({ onOpenPopup }: HomeProps) => {
         </div>
       </div>
     </section>
+      </div>
   );
 };
 
