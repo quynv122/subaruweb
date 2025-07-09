@@ -118,7 +118,7 @@ const Forester = ({ onOpenPopup }: HomeProps) => {
           </div>
         </div>
       </div>
-      <hr className=" border-t-4 border-gray-400" />
+      <hr className=" border-t border-gray-400" />
       <div>
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-8 md:px-32">
           <section>
