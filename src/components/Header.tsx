@@ -115,7 +115,7 @@ const Header = ({ onOpenPopup }: HomeProps) => {
           </div>
 
           <button
-            onClick={() => navigate("/News&Events")}
+            onClick={() => navigate("/News-Events")}
             className=" font-bold hover:underline"
           >
             TIN TỨC & SỰ KIỆN
@@ -202,7 +202,7 @@ const Header = ({ onOpenPopup }: HomeProps) => {
 </div>
 
           <button
-            onClick={() => navigate("/News&Events")}
+            onClick={() => navigate("/News-Events")}
             className="hover:underline"
           >
             TIN TỨC & SỰ KIỆN

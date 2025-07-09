@@ -42,7 +42,7 @@ function App() {
           element={<CarLists onOpenPopup={openPopup} />}
         />
         <Route
-          path="/News&Events"
+          path="/News-Events"
           element={<NewsEvents onOpenPopup={openPopup} />}
         />
         <Route
