@@ -82,6 +82,7 @@ const MixedSlider = ({ onOpenPopup }: HomeProps) => {
         {[Slide2, Slide3, Slide4, Slide5].map((src, idx) => (
           <div key={idx} className="keen-slider__slide">
             <img
+              onClick={() => onOpenPopup()}
               src={src}
               alt={`Slide ${idx + 2}`}
               className="w-full h-auto object-cover rounded-xl"

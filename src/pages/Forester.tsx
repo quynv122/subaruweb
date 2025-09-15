@@ -75,7 +75,7 @@ const Forester = ({ onOpenPopup }: HomeProps) => {
             <li>
               Subaru Forester 2.0 i-L:{" "}
               <span className="text-blue-700 font-semibold">
-                799.000.000 VNĐ
+                829.000.000 VND
               </span>
             </li>
             <li>
